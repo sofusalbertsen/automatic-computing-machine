@@ -16,3 +16,12 @@ jobs:
         uses: docker://hello-world
       - name: look at the os-release
         run: cat /etc/os-release
+      - name: Group of log lines
+        run: |
+            echo "::group::My title"
+            echo "Inside group"
+            echo "::endgroup::"
+      - run: echo '### This is a part of the summary :rocket:' >>  $GITHUB_STEP_SUMMARY
+      - run: echo 'deployed to [github](https://github.com)' >>  $GITHUB_STEP_SUMMARY
+      - run: echo "::add-mask::Mona The Octocat"
+      - run: echo "Mona The Octocat"
