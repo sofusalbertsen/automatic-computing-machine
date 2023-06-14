@@ -3,7 +3,15 @@ on: [workflow_dispatch, push]
 jobs:
   first-job:
     runs-on: ubuntu-latest
-    name: first job
+    name: The first job
     steps:
-      - name: run hello world
+      - name: hej 
         run: echo hello world
+      - name: Dump GitHub context
+        run: echo '${{ toJSON(github)}}'
+      - name: Dump GitHub context
+        run: echo '${{ toJSON(runner)}}'
+      - name: run container
+        uses: docker://hello-world
+      - name: look at the os-release
+        run: cat /etc/os-release
