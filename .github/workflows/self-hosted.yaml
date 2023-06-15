@@ -1,4 +1,4 @@
-name: new-workflow
+name: Self hosted runner
 on: [workflow_dispatch]
 
 jobs:
