@@ -1,4 +1,4 @@
-name: Self hosted runner
+name: self hosted runner
 on: [workflow_dispatch]
 
 jobs:
@@ -7,5 +7,11 @@ jobs:
     steps:
       - name: hej 
         run: echo hello world
+      - name: list files
+        run: ls
+      - name: place a file
+        run: echo 'hej' >> hej.txt
+      - name: list files
+        run: ls
       - name: Dump GitHub context
         run: echo '${{ toJSON(runner)}}'
