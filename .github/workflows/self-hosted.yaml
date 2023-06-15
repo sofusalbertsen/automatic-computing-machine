@@ -1,0 +1,11 @@
+name: new-workflow
+on: [workflow_dispatch]
+
+jobs:
+  first-job:
+    runs-on: [self-hosted,linux]
+    steps:
+      - name: hej 
+        run: echo hello world
+      - name: Dump GitHub context
+        run: echo '${{ toJSON(runner)}}'
